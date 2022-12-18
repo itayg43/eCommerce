@@ -2,7 +2,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 import {ProductsStackParamList} from '../types';
 import ProductsScreen from '../screens/ProductsScreen';
-import ProductDetailsScreen from '../screens/ProductDetailsScreen';
+import ProductDetailsScreen from '../screens/productDetailsScreen';
 
 const Stack = createNativeStackNavigator<ProductsStackParamList>();
 

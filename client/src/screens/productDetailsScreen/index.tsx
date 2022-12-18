@@ -1,15 +1,19 @@
 import React, {useEffect, useState, useCallback} from 'react';
-import {StyleSheet, View, Image, Text, Pressable} from 'react-native';
+import {View, Image, Text, Pressable} from 'react-native';
 import {useRoute, useNavigation} from '@react-navigation/native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
-import {sanityClient} from '../clients';
-import {Product} from '../interfaces';
-import {ProductDetailsRouteProp} from '../types';
-import {getProductByIdQuery} from '../queries';
+import {sanityClient} from '../../clients';
+import {Product} from '../../interfaces';
+import {
+  ProductDetailsRouteProp,
+  ProductDetailsNavigationProp,
+} from '../../types';
+import {getProductByIdQuery} from '../../queries';
+import {styles} from './productDetailsScreenStyles';
 
 const ProductDetailsScreen = () => {
-  const navigation = useNavigation();
+  const navigation = useNavigation<ProductDetailsNavigationProp>();
   const route = useRoute<ProductDetailsRouteProp>();
 
   const [product, setProduct] = useState<Product | null>(null);
@@ -65,35 +69,3 @@ const ProductDetailsScreen = () => {
 };
 
 export default ProductDetailsScreen;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  image: {
-    width: '100%',
-    height: 300,
-  },
-  closeBtnContainer: {
-    position: 'absolute',
-    top: 10,
-    start: 10,
-    backgroundColor: 'white',
-    borderRadius: 10,
-    padding: 3,
-  },
-  detailsContainer: {
-    paddingHorizontal: 10,
-    marginTop: 10,
-  },
-  name: {
-    fontWeight: 'bold',
-    marginTop: 5,
-  },
-  price: {
-    marginTop: 10,
-  },
-  description: {
-    marginTop: 10,
-  },
-});
