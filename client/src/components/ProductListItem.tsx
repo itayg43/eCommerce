@@ -3,7 +3,7 @@ import {StyleSheet, View, Text, Image, Pressable} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
 import {Product} from '../interfaces';
-import {ProductDetailsNavigationProp} from '../navigation/ProductsStackNavigator';
+import {ProductDetailsNavigationProp} from '../types';
 
 interface Props {
   product: Product;
