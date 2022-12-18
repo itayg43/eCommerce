@@ -12,6 +12,7 @@
   "dependencies": {
     "@react-navigation/bottom-tabs": "^6.5.2",
     "@react-navigation/native": "^6.1.1",
+    "@react-navigation/native-stack": "^6.9.7",
     "@sanity/client": "^3.4.1",
     "@types/react-native-vector-icons": "^6.4.12",
     "groq": "^2.33.2",

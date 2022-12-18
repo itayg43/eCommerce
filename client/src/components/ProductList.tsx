@@ -1,5 +1,5 @@
 import React, {useEffect, useState, useCallback} from 'react';
-import {FlatList, View} from 'react-native';
+import {FlatList} from 'react-native';
 
 import {sanityClient} from '../clients';
 import {getAllProductsQuery} from '../queries';

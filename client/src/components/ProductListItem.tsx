@@ -1,14 +1,20 @@
 import React, {useCallback} from 'react';
 import {StyleSheet, View, Text, Image, Pressable} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 
 import {Product} from '../interfaces';
+import {ProductDetailsNavigationProp} from '../navigation/ProductsStackNavigator';
 
 interface Props {
   product: Product;
 }
 
 const ProductListItem = ({product}: Props) => {
-  const handlePress = useCallback(() => {}, []);
+  const navigation = useNavigation<ProductDetailsNavigationProp>();
+
+  const handlePress = useCallback(() => {
+    navigation.navigate('Product_Details', {productId: product._id});
+  }, [navigation]);
 
   return (
     <Pressable onPress={handlePress}>
