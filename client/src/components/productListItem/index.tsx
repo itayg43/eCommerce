@@ -1,9 +1,10 @@
 import React, {useCallback} from 'react';
-import {StyleSheet, View, Text, Image, Pressable} from 'react-native';
+import {View, Text, Image, Pressable} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
-import {Product} from '../interfaces';
-import {ProductDetailsNavigationProp} from '../types';
+import {Product} from '../../interfaces';
+import {ProductDetailsNavigationProp} from '../../types';
+import {styles} from './productListItemStyles';
 
 interface Props {
   product: Product;
@@ -41,29 +42,3 @@ const ProductListItem = ({product}: Props) => {
 };
 
 export default ProductListItem;
-
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: 'white',
-    borderRadius: 4,
-    overflow: 'hidden',
-    marginBottom: 10,
-  },
-  image: {
-    width: '100%',
-    height: 200,
-  },
-  detailsContainer: {
-    padding: 10,
-  },
-  name: {
-    fontWeight: 'bold',
-    marginTop: 5,
-  },
-  price: {
-    marginTop: 5,
-  },
-  description: {
-    marginTop: 5,
-  },
-});

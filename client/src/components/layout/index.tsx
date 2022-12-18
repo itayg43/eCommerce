@@ -1,5 +1,7 @@
 import React, {ReactNode} from 'react';
-import {StyleSheet, SafeAreaView, View} from 'react-native';
+import {SafeAreaView, View} from 'react-native';
+
+import {styles} from './layoutStyles';
 
 interface Props {
   children: ReactNode;
@@ -14,14 +16,3 @@ const Layout = ({children}: Props) => {
 };
 
 export default Layout;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#ccc',
-  },
-  contentContainer: {
-    flex: 1,
-    paddingHorizontal: 5,
-  },
-});

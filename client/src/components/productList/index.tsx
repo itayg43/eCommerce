@@ -1,10 +1,10 @@
 import React, {useEffect, useState, useCallback} from 'react';
 import {FlatList} from 'react-native';
 
-import {sanityClient} from '../clients';
-import {getAllProductsQuery} from '../queries';
-import {Product} from '../interfaces';
-import ProductListItem from './ProductListItem';
+import {sanityClient} from '../../clients';
+import {getAllProductsQuery} from '../../queries';
+import {Product} from '../../interfaces';
+import ProductListItem from '../productListItem';
 
 const ProductList = () => {
   const [products, setProducts] = useState<[Product] | []>([]);
