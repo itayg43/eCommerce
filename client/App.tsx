@@ -1,9 +1,14 @@
 import React from 'react';
+import {NavigationContainer} from '@react-navigation/native';
 
-import ProductsScreen from './src/screens/ProductsScreen';
+import BottomTabNavigator from './src/navigation/BottomTabNavigator';
 
 const App = () => {
-  return <ProductsScreen />;
+  return (
+    <NavigationContainer>
+      <BottomTabNavigator />
+    </NavigationContainer>
+  );
 };
 
 export default App;

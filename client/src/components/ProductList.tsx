@@ -27,7 +27,6 @@ const ProductList = () => {
       data={products}
       renderItem={({item}) => <ProductListItem product={item} />}
       keyExtractor={item => item._id}
-      ItemSeparatorComponent={() => <View style={{marginBottom: 10}} />}
     />
   );
 };
