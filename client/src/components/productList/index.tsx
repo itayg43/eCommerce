@@ -1,27 +1,14 @@
-import React, {useEffect, useState, useCallback} from 'react';
+import React from 'react';
 import {FlatList} from 'react-native';
 
-import {sanityClient} from '../../clients';
-import {getAllProductsQuery} from '../../queries';
 import {Product} from '../../interfaces';
 import ProductListItem from '../productListItem';
 
-const ProductList = () => {
-  const [products, setProducts] = useState<[Product] | []>([]);
+interface Props {
+  products: [Product] | [];
+}
 
-  const handleGetProducts = useCallback(async () => {
-    try {
-      const receivedProducts = await sanityClient.fetch(getAllProductsQuery);
-      setProducts(receivedProducts);
-    } catch (error) {
-      console.error(error);
-    }
-  }, [setProducts]);
-
-  useEffect(() => {
-    handleGetProducts();
-  }, [handleGetProducts]);
-
+const ProductList = ({products}: Props) => {
   return (
     <FlatList
       data={products}
