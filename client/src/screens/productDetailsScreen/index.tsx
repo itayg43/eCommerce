@@ -1,10 +1,12 @@
 import React, {useEffect, useCallback} from 'react';
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {View, Image, Text, Pressable} from 'react-native';
 import {Button} from 'react-native-paper';
 import {useRoute, useNavigation} from '@react-navigation/native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
+import {getProductById} from '../../redux/product/actions/getProductById';
+import {selectProduct} from '../../redux/product/selectors';
 import {
   ProductDetailsRouteProp,
   ProductDetailsNavigationProp,
@@ -13,11 +15,11 @@ import styles from './productDetailsScreenStyles';
 
 const ProductDetailsScreen = () => {
   const dispatch = useDispatch();
-
   const navigation = useNavigation<ProductDetailsNavigationProp>();
   const route = useRoute<ProductDetailsRouteProp>();
 
   const id = route.params?.id;
+  const product = useSelector(selectProduct);
 
   const handleClose = useCallback(() => {
     navigation.goBack();
@@ -29,8 +31,9 @@ const ProductDetailsScreen = () => {
   };
 
   useEffect(() => {
-    if (id) {
-      //dispatch<any>();
+    const isDifferentId = id && id !== product?._id;
+    if (isDifferentId) {
+      dispatch<any>(getProductById(id));
     }
   }, [dispatch, id]);
 
