@@ -9,7 +9,6 @@ const Stack = createNativeStackNavigator<ProductsStackParamList>();
 const ProductsStackNavigator = () => {
   return (
     <Stack.Navigator
-      initialRouteName="Products"
       screenOptions={{
         headerShown: false,
       }}>

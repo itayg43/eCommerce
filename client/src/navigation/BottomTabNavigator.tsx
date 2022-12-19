@@ -10,14 +10,15 @@ const Tab = createBottomTabNavigator();
 const BottomTabNavigator = () => {
   return (
     <Tab.Navigator
-      initialRouteName="Products_Stack"
-      screenOptions={{headerShown: false}}>
+      screenOptions={{
+        headerShown: false,
+        tabBarShowLabel: false,
+      }}>
       {/** products */}
       <Tab.Screen
         name="Products_Stack"
         component={ProductsStackNavigator}
         options={{
-          tabBarLabel: 'Products',
           tabBarIcon: ({color, size}) => (
             <MaterialCommunityIcons name="apps" color={color} size={size} />
           ),
