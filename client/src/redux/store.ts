@@ -1,12 +1,14 @@
 import {createStore, combineReducers, applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
 
+import appReducer from './app/reducer';
 import productsReducer from './products/reducer';
 import productReducer from './product/reducer';
-import {IProductsState, IProductState} from '../interfaces';
+import {IAppState, IProductsState, IProductState} from '../interfaces';
 
 const initialState = {};
 const reducers = combineReducers({
+  appState: appReducer,
   productsState: productsReducer,
   productState: productReducer,
 });
@@ -19,6 +21,7 @@ const store = createStore(
 );
 
 export interface IStoreState {
+  appState: IAppState;
   productsState: IProductsState;
   productState: IProductState;
 }

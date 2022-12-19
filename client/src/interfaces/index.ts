@@ -27,6 +27,16 @@ export interface IProductDetailsScreenProps {
 }
 
 // redux
+// app
+export interface IAppState {
+  isLoading: boolean;
+  isReady: boolean;
+}
+
+export interface IAppAction {
+  type: string;
+}
+
 // products
 export interface IProductsState {
   isLoading: boolean;
