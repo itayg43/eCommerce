@@ -7,6 +7,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 
 import {getProductById} from '../../redux/product/actions/getProductById';
 import {selectProduct} from '../../redux/product/selectors';
+import {addItemToCart} from '../../redux/cart/actions/addItemToCart';
 import {
   ProductDetailsRouteProp,
   ProductDetailsNavigationProp,
@@ -26,7 +27,7 @@ const ProductDetailsScreen = () => {
   }, [navigation]);
 
   const handleAddToCart = () => {
-    //dispatch<any>()
+    dispatch<any>(addItemToCart(product));
     handleClose();
   };
 

@@ -1,3 +1,5 @@
+import {CartItemEntity} from '../entities/CartItem';
+
 // models
 // product
 export interface IProduct {
@@ -6,16 +8,6 @@ export interface IProduct {
   description: string;
   category: string;
   price: number;
-  imageUrl: string;
-}
-
-// cart item
-export interface ICartItem {
-  _id: string;
-  name: string;
-  price: number;
-  quantity: number;
-  totalPrice: number;
   imageUrl: string;
 }
 
@@ -77,11 +69,11 @@ export interface IProductAction {
 export interface ICartState {
   amountOfItems: number;
   totalCost: number;
-  items: [ICartItem] | [];
+  items: [CartItemEntity] | [];
 }
 
 interface ICartActionPayload {
-  item?: ICartItem;
+  item: CartItemEntity;
 }
 
 export interface ICartAction {
