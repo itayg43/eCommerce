@@ -1,52 +1,38 @@
-import React, {useEffect, useState, useCallback} from 'react';
+import React, {useEffect, useCallback} from 'react';
+import {useDispatch} from 'react-redux';
 import {View, Image, Text, Pressable} from 'react-native';
 import {Button} from 'react-native-paper';
 import {useRoute, useNavigation} from '@react-navigation/native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
-import {sanityClient} from '../../clients';
-import {Product} from '../../interfaces';
 import {
   ProductDetailsRouteProp,
   ProductDetailsNavigationProp,
 } from '../../types';
-import {getProductByIdQuery} from '../../queries';
 import styles from './productDetailsScreenStyles';
 
 const ProductDetailsScreen = () => {
+  const dispatch = useDispatch();
+
   const navigation = useNavigation<ProductDetailsNavigationProp>();
   const route = useRoute<ProductDetailsRouteProp>();
 
-  const [product, setProduct] = useState<Product | null>(null);
-
-  const handleGetProductById = useCallback(
-    async (id: string) => {
-      try {
-        const receivedProduct = await sanityClient.fetch(getProductByIdQuery, {
-          id,
-        });
-        setProduct(receivedProduct);
-      } catch (error) {
-        console.error(error);
-      }
-    },
-    [setProduct],
-  );
+  const id = route.params?.id;
 
   const handleClose = useCallback(() => {
     navigation.goBack();
   }, [navigation]);
 
   const handleAddToCart = () => {
+    //dispatch<any>()
     handleClose();
   };
 
   useEffect(() => {
-    const id = route.params?.id;
     if (id) {
-      handleGetProductById(id);
+      //dispatch<any>();
     }
-  }, [route.params?.id, handleGetProductById]);
+  }, [dispatch, id]);
 
   return (
     <View style={styles.container}>

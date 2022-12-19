@@ -1,26 +1,19 @@
-import React, {useEffect, useState, useCallback} from 'react';
+import React, {useEffect} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
 
-import {sanityClient} from '../clients';
-import {Product} from '../interfaces';
-import {getAllProductsQuery} from '../queries';
+import {getAllProducts} from '../redux/products/actions/getAllProducts';
+import {selectProducts} from '../redux/products/selectors';
 import Layout from '../components/layout';
 import ProductList from '../components/productList';
 
 const ProductsScreen = () => {
-  const [products, setProducts] = useState<[Product] | []>([]);
+  const dispatch = useDispatch();
 
-  const handleGetProducts = useCallback(async () => {
-    try {
-      const receivedProducts = await sanityClient.fetch(getAllProductsQuery);
-      setProducts(receivedProducts);
-    } catch (error) {
-      console.error(error);
-    }
-  }, [setProducts]);
+  const products = useSelector(selectProducts);
 
   useEffect(() => {
-    handleGetProducts();
-  }, [handleGetProducts]);
+    dispatch<any>(getAllProducts());
+  }, [dispatch]);
 
   return (
     <Layout>

@@ -1,11 +1,11 @@
 import React from 'react';
 import {FlatList} from 'react-native';
 
-import {Product} from '../../interfaces';
+import {IProduct} from '../../interfaces';
 import ProductListItem from '../productListItem';
 
 interface Props {
-  products: [Product] | [];
+  products: [IProduct] | [];
 }
 
 const ProductList = ({products}: Props) => {

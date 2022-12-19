@@ -1,12 +1,12 @@
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {RouteProp} from '@react-navigation/native';
 
-import {ProductsProps, ProductDetailsProps} from '../interfaces';
+import {IProductsScreenProps, IProductDetailsScreenProps} from '../interfaces';
 
 // products stack
 export type ProductsStackParamList = {
-  Products: ProductsProps | undefined;
-  Product_Details: ProductDetailsProps | undefined;
+  Products: IProductsScreenProps | undefined;
+  Product_Details: IProductDetailsScreenProps | undefined;
 };
 
 // product details
