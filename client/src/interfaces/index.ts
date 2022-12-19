@@ -10,5 +10,5 @@ export interface Product {
 export interface ProductsProps {}
 
 export interface ProductDetailsProps {
-  productId: string;
+  id: string;
 }

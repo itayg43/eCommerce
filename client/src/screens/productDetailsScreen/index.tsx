@@ -37,11 +37,11 @@ const ProductDetailsScreen = () => {
   }, [navigation]);
 
   useEffect(() => {
-    const id = route.params?.productId;
+    const id = route.params?.id;
     if (id) {
       handleGetProductById(id);
     }
-  }, [route.params?.productId, handleGetProductById]);
+  }, [route.params?.id, handleGetProductById]);
 
   return (
     <View style={styles.container}>

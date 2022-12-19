@@ -14,7 +14,7 @@ const ProductListItem = ({product}: Props) => {
   const navigation = useNavigation<ProductDetailsNavigationProp>();
 
   const handlePress = useCallback(() => {
-    navigation.navigate('Product_Details', {productId: product._id});
+    navigation.navigate('Product_Details', {id: product._id});
   }, [navigation]);
 
   return (
