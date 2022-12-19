@@ -1,5 +1,6 @@
 import React, {useEffect, useState, useCallback} from 'react';
 import {View, Image, Text, Pressable} from 'react-native';
+import {Button} from 'react-native-paper';
 import {useRoute, useNavigation} from '@react-navigation/native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
@@ -36,6 +37,10 @@ const ProductDetailsScreen = () => {
     navigation.goBack();
   }, [navigation]);
 
+  const handleAddToCart = () => {
+    console.log(product);
+  };
+
   useEffect(() => {
     const id = route.params?.id;
     if (id) {
@@ -46,7 +51,9 @@ const ProductDetailsScreen = () => {
   return (
     <View style={styles.container}>
       {/** image */}
-      <Image style={styles.image} source={{uri: product?.imageUrl}} />
+      <View style={styles.imageContainer}>
+        <Image style={styles.image} source={{uri: product?.imageUrl}} />
+      </View>
 
       {/** close btn */}
       <Pressable style={styles.closeBtnContainer} onPress={handleClose}>
@@ -63,6 +70,18 @@ const ProductDetailsScreen = () => {
 
         {/** description */}
         <Text style={styles.description}>{product?.description}</Text>
+      </View>
+
+      {/** add to cart btn */}
+      <View style={styles.addToCartBtnContainer}>
+        <Button
+          style={styles.addToCartBtn}
+          icon="plus"
+          mode="contained"
+          uppercase
+          onPress={handleAddToCart}>
+          Add to cart
+        </Button>
       </View>
     </View>
   );
