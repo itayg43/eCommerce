@@ -4,7 +4,7 @@ import {useNavigation} from '@react-navigation/native';
 
 import {Product} from '../../interfaces';
 import {ProductDetailsNavigationProp} from '../../types';
-import {styles} from './productListItemStyles';
+import styles from './productListItemStyles';
 
 interface Props {
   product: Product;

@@ -1,7 +1,7 @@
 import React, {ReactNode} from 'react';
 import {SafeAreaView, View} from 'react-native';
 
-import {styles} from './layoutStyles';
+import styles from './layoutStyles';
 
 interface Props {
   children: ReactNode;

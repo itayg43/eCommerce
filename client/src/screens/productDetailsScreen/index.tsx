@@ -10,7 +10,7 @@ import {
   ProductDetailsNavigationProp,
 } from '../../types';
 import {getProductByIdQuery} from '../../queries';
-import {styles} from './productDetailsScreenStyles';
+import styles from './productDetailsScreenStyles';
 
 const ProductDetailsScreen = () => {
   const navigation = useNavigation<ProductDetailsNavigationProp>();
