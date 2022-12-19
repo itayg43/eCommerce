@@ -38,7 +38,7 @@ const ProductDetailsScreen = () => {
   }, [navigation]);
 
   const handleAddToCart = () => {
-    console.log(product);
+    handleClose();
   };
 
   useEffect(() => {
