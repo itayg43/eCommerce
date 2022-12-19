@@ -65,11 +65,13 @@ export interface IProductAction {
 
 // cart
 export interface ICartState {
-  cart: [ICartItem] | [];
+  amountOfItems: number;
+  totalCost: number;
+  items: [ICartItem] | [];
 }
 
 interface ICartActionPayload {
-  cartItem?: ICartItem;
+  item?: ICartItem;
 }
 
 export interface ICartAction {
