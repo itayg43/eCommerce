@@ -1,11 +1,21 @@
-// product / products
-// model
+// models
+// product
 export interface IProduct {
   _id: string;
   name: string;
   description: string;
   category: string;
   price: number;
+  imageUrl: string;
+}
+
+// cart item
+export interface ICartItem {
+  _id: string;
+  name: string;
+  price: number;
+  quantity: number;
+  totalPrice: number;
   imageUrl: string;
 }
 
@@ -51,4 +61,18 @@ interface IProductActionPayload {
 export interface IProductAction {
   type: string;
   payload: IProductActionPayload;
+}
+
+// cart
+export interface ICartState {
+  cart: [ICartItem] | [];
+}
+
+interface ICartActionPayload {
+  cartItem?: ICartItem;
+}
+
+export interface ICartAction {
+  type: string;
+  payload: ICartActionPayload;
 }
