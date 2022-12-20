@@ -1,14 +1,13 @@
 import React from 'react';
 import {FlatList} from 'react-native';
+import {useSelector} from 'react-redux';
 
-import {IProduct} from '../../interfaces';
+import {selectProducts} from '../../redux/products/selectors';
 import ProductListItem from '../productListItem';
 
-interface Props {
-  products: [IProduct] | [];
-}
+const ProductList = () => {
+  const products = useSelector(selectProducts);
 
-const ProductList = ({products}: Props) => {
   return (
     <FlatList
       data={products}
