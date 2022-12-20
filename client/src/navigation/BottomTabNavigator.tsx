@@ -3,7 +3,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import ProductsStackNavigator from './ProductsStackNavigator';
-import CartScreen from '../screens/CartScreen';
+import CartScreen from '../screens/cartScreen';
 
 const Tab = createBottomTabNavigator();
 

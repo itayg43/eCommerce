@@ -5,7 +5,7 @@ export default StyleSheet.create({
     backgroundColor: 'white',
     borderRadius: 4,
     overflow: 'hidden',
-    marginBottom: 10,
+    marginBottom: 5,
   },
   image: {
     width: '100%',
