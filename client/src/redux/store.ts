@@ -1,37 +1,17 @@
-import {createStore, combineReducers, applyMiddleware} from 'redux';
-import thunk from 'redux-thunk';
+import {configureStore} from '@reduxjs/toolkit';
 
-import appReducer from './app/reducer';
-import productsReducer from './products/reducer';
-import productReducer from './product/reducer';
-import cartReducer from './cart/reducer';
-import {
-  IAppState,
-  IProductsState,
-  IProductState,
-  ICartState,
-} from '../interfaces';
+import appReducer from '../redux/app/slice';
+import productsReducer from '../redux/products/slice';
+import productReducer from '../redux/product/slice';
 
-const initialState = {};
-const reducers = combineReducers({
-  appState: appReducer,
-  productsState: productsReducer,
-  productState: productReducer,
-  cartState: cartReducer,
+export const store = configureStore({
+  reducer: {
+    appState: appReducer,
+    productsState: productsReducer,
+    productState: productReducer,
+  },
 });
-const middlewares = [thunk];
 
-const store = createStore(
-  reducers,
-  initialState,
-  applyMiddleware(...middlewares),
-);
+export type RootState = ReturnType<typeof store.getState>;
 
-export interface IStoreState {
-  appState: IAppState;
-  productsState: IProductsState;
-  productState: IProductState;
-  cartState: ICartState;
-}
-
-export default store;
+export type AppDispatch = typeof store.dispatch;

@@ -1,8 +1,34 @@
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {
+  createNativeStackNavigator,
+  NativeStackNavigationProp,
+} from '@react-navigation/native-stack';
+import {RouteProp} from '@react-navigation/native';
 
-import {ProductsStackParamList} from '../types';
 import ProductsScreen from '../screens/ProductsScreen';
 import ProductDetailsScreen from '../screens/productDetailsScreen';
+
+// product details
+// screen props
+interface ProductDetailsScreenProps {
+  id: string;
+}
+
+// navigation prop
+export type ProductDetailsNavigationProp = NativeStackNavigationProp<
+  ProductsStackParamList,
+  'Product_Details'
+>;
+
+// route prop
+export type ProductDetailsRouteProp = RouteProp<
+  ProductsStackParamList,
+  'Product_Details'
+>;
+
+export type ProductsStackParamList = {
+  Products: undefined;
+  Product_Details: ProductDetailsScreenProps | undefined;
+};
 
 const Stack = createNativeStackNavigator<ProductsStackParamList>();
 

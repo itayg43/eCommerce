@@ -2,12 +2,12 @@ import React, {useCallback} from 'react';
 import {View, Text, Image, Pressable} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
-import {IProduct} from '../../interfaces';
-import {ProductDetailsNavigationProp} from '../../types';
+import {Product} from '../../interfaces';
+import {ProductDetailsNavigationProp} from '../../navigation/ProductsStackNavigator';
 import styles from './productListItemStyles';
 
 interface Props {
-  product: IProduct;
+  product: Product;
 }
 
 const ProductListItem = ({product}: Props) => {

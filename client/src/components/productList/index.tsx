@@ -1,12 +1,12 @@
 import React from 'react';
 import {FlatList} from 'react-native';
-import {useSelector} from 'react-redux';
 
+import {useAppSelector} from '../../hooks';
 import {selectProducts} from '../../redux/products/selectors';
 import ProductListItem from '../productListItem';
 
 const ProductList = () => {
-  const products = useSelector(selectProducts);
+  const products = useAppSelector(selectProducts);
 
   return (
     <FlatList

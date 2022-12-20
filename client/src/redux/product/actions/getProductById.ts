@@ -1,37 +1,20 @@
-import {Dispatch} from 'redux';
-
-import actionTypes from './actionTypes';
-import {IProduct, IProductAction} from '../../../interfaces';
+import {
+  getProductByIdStarted,
+  getProductByIdSucceeded,
+  getProductByIdFailed,
+} from '../slice';
+import {AppDispatch} from '../../store';
 import {sanityClient} from '../../../clients';
 import {getProductByIdQuery} from '../../../queries';
 
-const getProductByIdAction = (): IProductAction => ({
-  type: actionTypes.GET_PRODUCT_BY_ID,
-  payload: {},
-});
-
-const getProductByIdActionSuccess = (product: IProduct): IProductAction => ({
-  type: actionTypes.GET_PRODUCT_BY_ID_SUCCESS,
-  payload: {
-    product,
-  },
-});
-
-const getProductByIdActionFail = (errorMessage: string): IProductAction => ({
-  type: actionTypes.GET_PRODUCT_BY_ID_FAIL,
-  payload: {
-    errorMessage,
-  },
-});
-
-export const getProductById = (id: string) => async (dispatch: Dispatch) => {
-  dispatch(getProductByIdAction());
+export const getProductById = (id: string) => async (dispatch: AppDispatch) => {
   try {
+    dispatch(getProductByIdStarted());
     const product = await sanityClient.fetch(getProductByIdQuery, {id});
-    dispatch(getProductByIdActionSuccess(product));
+    dispatch(getProductByIdSucceeded(product));
   } catch (error) {
     console.error(error);
-    const errorMessage = 'An error occurred while getting product';
-    dispatch(getProductByIdActionFail(errorMessage));
+    const errorMessage = 'An error occurred while trying to get product';
+    dispatch(getProductByIdFailed(errorMessage));
   }
 };
