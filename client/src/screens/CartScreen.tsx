@@ -1,5 +1,6 @@
 import React from 'react';
-import {Text} from 'react-native';
+import {View} from 'react-native';
+import {Text} from 'react-native-paper';
 
 import Layout from '../components/layout';
 import CartList from '../components/cartList';
@@ -7,8 +8,10 @@ import CartList from '../components/cartList';
 const CartScreen = () => {
   return (
     <Layout>
-      <Text>My Cart</Text>
-      <CartList />
+      <Text variant="headlineLarge">My Cart</Text>
+      <View style={{flex: 1, marginTop: 10}}>
+        <CartList />
+      </View>
     </Layout>
   );
 };

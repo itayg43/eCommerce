@@ -7,7 +7,7 @@ export default StyleSheet.create({
     backgroundColor: 'white',
     padding: 10,
     borderRadius: 4,
-    marginBottom: 10,
+    marginBottom: 5,
   },
 
   // image
@@ -22,7 +22,7 @@ export default StyleSheet.create({
   },
 
   // name, price
-  nameAndPriceContainer: {
+  detailsContainer: {
     flex: 1,
     padding: 10,
   },
@@ -30,6 +30,9 @@ export default StyleSheet.create({
     fontWeight: 'bold',
   },
   price: {
+    marginTop: 3,
+  },
+  quantity: {
     marginTop: 3,
   },
 

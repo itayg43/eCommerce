@@ -12,7 +12,18 @@ const addItemToCartAction = (item: CartItemEntity): ICartAction => ({
 });
 
 export const addItemToCart =
-  (product: IProduct) => async (dispatch: Dispatch) => {
-    const item = new CartItemEntity(product);
-    dispatch(addItemToCartAction(item));
+  (product: IProduct) => async (dispatch: Dispatch, getState: any) => {
+    const currentItems = getState().cartState.items;
+
+    // check if item already exist
+    const existItem = currentItems.find(
+      (item: CartItemEntity) => item._id === product._id,
+    );
+    if (existItem) {
+      // dispatch -> update quantity
+      return;
+    }
+
+    const newItem = new CartItemEntity(product);
+    dispatch(addItemToCartAction(newItem));
   };

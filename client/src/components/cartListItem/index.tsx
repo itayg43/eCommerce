@@ -26,7 +26,7 @@ const CartListItem = ({item}: Props) => {
       </View>
 
       {/** name, price */}
-      <View style={styles.nameAndPriceContainer}>
+      <View style={styles.detailsContainer}>
         {/** name */}
         <Text style={styles.name} numberOfLines={1}>
           {item.name}
@@ -34,6 +34,9 @@ const CartListItem = ({item}: Props) => {
 
         {/** price */}
         <Text style={styles.price}>${item.price}</Text>
+
+        {/** quantity */}
+        <Text style={styles.quantity}>Quantity: {item.quantity}</Text>
       </View>
 
       {/** delete */}
