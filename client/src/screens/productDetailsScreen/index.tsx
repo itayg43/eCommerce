@@ -27,8 +27,10 @@ const ProductDetailsScreen = () => {
   }, [navigation]);
 
   const handleAddToCart = () => {
-    dispatch<any>(addItemToCart(product));
-    handleClose();
+    if (product) {
+      dispatch<any>(addItemToCart(product));
+      handleClose();
+    }
   };
 
   useEffect(() => {
