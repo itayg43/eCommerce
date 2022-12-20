@@ -26,12 +26,12 @@ const ProductDetailsScreen = () => {
     navigation.goBack();
   }, [navigation]);
 
-  const handleAddToCart = () => {
+  const handleAddToCart = useCallback(() => {
     if (product) {
       dispatch<any>(addItemToCart(product));
       handleClose();
     }
-  };
+  }, [dispatch, product, handleClose]);
 
   useEffect(() => {
     const isDifferentId = id && id !== product?._id;
