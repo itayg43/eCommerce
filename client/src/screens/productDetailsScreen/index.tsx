@@ -10,6 +10,7 @@ import {
 } from '../../navigation/ProductsStackNavigator';
 import {useAppDispatch, useAppSelector} from '../../hooks';
 import {selectProduct} from '../../redux/product/selectors';
+import {addItemToCart} from '../../redux/cart/actions/addItemToCart';
 import {getProductById} from '../../redux/product/actions/getProductById';
 import styles from './productDetailsScreenStyles';
 
@@ -24,6 +25,13 @@ const ProductDetailsScreen = () => {
   const handleClose = useCallback(() => {
     navigation.goBack();
   }, [navigation]);
+
+  const handleAddToCart = useCallback(() => {
+    if (product) {
+      dispatch(addItemToCart(product, 1));
+      handleClose();
+    }
+  }, [dispatch, product, handleClose]);
 
   useEffect(() => {
     const isDifferentId = id && id !== product?._id;
@@ -62,7 +70,8 @@ const ProductDetailsScreen = () => {
           style={styles.addToCartBtn}
           icon="plus"
           mode="contained"
-          uppercase>
+          uppercase
+          onPress={handleAddToCart}>
           Add to cart
         </Button>
       </View>

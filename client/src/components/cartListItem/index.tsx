@@ -2,14 +2,22 @@ import React, {useCallback} from 'react';
 import {View, Image, Text, Pressable} from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
-import {CartItemEntity} from '../../entities/CartItem';
+import {useAppDispatch} from '../../hooks';
+import {removeItemFromCart} from '../../redux/cart/actions/removeItemFromCart';
+import {CartItem} from '../../interfaces';
 import styles from './cartListItemStyles';
 
 interface Props {
-  item: CartItemEntity;
+  item: CartItem;
 }
 
 const CartListItem = ({item}: Props) => {
+  const dispatch = useAppDispatch();
+
+  const handleDelete = useCallback(() => {
+    dispatch(removeItemFromCart(item));
+  }, [dispatch, item]);
+
   return (
     <View style={styles.container}>
       {/** image */}
@@ -32,7 +40,7 @@ const CartListItem = ({item}: Props) => {
       </View>
 
       {/** delete */}
-      <Pressable style={styles.deleteBtnContainer}>
+      <Pressable style={styles.deleteBtnContainer} onPress={handleDelete}>
         <MaterialCommunityIcons name="trash-can" size={20} color="white" />
       </Pressable>
     </View>
