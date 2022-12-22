@@ -19,7 +19,7 @@ export default StyleSheet.create({
     position: 'absolute',
     top: 10,
     start: 10,
-    backgroundColor: 'white',
+    backgroundColor: 'black',
     borderRadius: 4,
     padding: 2,
   },
@@ -40,13 +40,38 @@ export default StyleSheet.create({
     marginTop: 10,
   },
 
-  // add to cart btn
-  addToCartBtnContainer: {
+  // add to cart
+  addToCartContainer: {
     flex: 0.1,
+    flexDirection: 'row',
+    alignItems: 'center',
     padding: 10,
   },
-  addToCartBtn: {
+
+  // quantity
+  quantityContainer: {
+    flex: 0.3,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
     backgroundColor: 'black',
+    padding: 10,
     borderRadius: 4,
+    marginEnd: 5,
+  },
+  quantity: {
+    color: 'white',
+  },
+
+  // add to cart btn
+  addToCartBtn: {
+    flex: 0.7,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    backgroundColor: 'black',
+    padding: 11,
+    borderRadius: 4,
+  },
+  addToCartBtnText: {
+    color: 'white',
   },
 });
