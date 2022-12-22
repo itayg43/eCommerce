@@ -34,11 +34,10 @@ const ProductDetailsScreen = () => {
   }, [dispatch, product, handleClose]);
 
   useEffect(() => {
-    const isDifferentId = id && id !== product?._id;
-    if (isDifferentId) {
+    if (id) {
       dispatch(getProductById(id));
     }
-  }, [dispatch]);
+  }, [dispatch, id]);
 
   return (
     <View style={styles.container}>
