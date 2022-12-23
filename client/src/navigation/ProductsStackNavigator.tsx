@@ -4,8 +4,14 @@ import {
 } from '@react-navigation/native-stack';
 import {RouteProp} from '@react-navigation/native';
 
-import ProductsScreen from '../screens/ProductsScreen';
+import ProductsScreen from '../screens/productsScreen';
 import ProductDetailsScreen from '../screens/productDetailsScreen';
+
+// products
+export type ProductsNavigationProp = NativeStackNavigationProp<
+  ProductsStackParamList,
+  'Products'
+>;
 
 // product details
 // screen props
@@ -34,18 +40,23 @@ const Stack = createNativeStackNavigator<ProductsStackParamList>();
 
 const ProductsStackNavigator = () => {
   return (
-    <Stack.Navigator
-      screenOptions={{
-        headerShown: false,
-      }}>
+    <Stack.Navigator>
       {/** products */}
-      <Stack.Screen name="Products" component={ProductsScreen} />
+      <Stack.Screen
+        name="Products"
+        component={ProductsScreen}
+        options={{
+          headerTransparent: true,
+          headerBlurEffect: 'systemUltraThinMaterial',
+        }}
+      />
 
       {/** product details */}
       <Stack.Screen
         name="Product_Details"
         component={ProductDetailsScreen}
         options={{
+          headerShown: false,
           presentation: 'modal',
         }}
       />

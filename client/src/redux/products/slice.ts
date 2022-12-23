@@ -8,6 +8,7 @@ interface ProductsState {
   isError: boolean;
   errorMessage: string | null;
   products: [Product] | [];
+  searchQuery: string;
 }
 
 const initialState: ProductsState = {
@@ -15,6 +16,7 @@ const initialState: ProductsState = {
   isError: false,
   errorMessage: null,
   products: [],
+  searchQuery: '',
 };
 
 export const productsSlice = createSlice({
@@ -36,6 +38,11 @@ export const productsSlice = createSlice({
       state.isError = true;
       state.errorMessage = action.payload;
     },
+
+    // update search query
+    updateSearchQuery: (state, action: PayloadAction<string>) => {
+      state.searchQuery = action.payload;
+    },
   },
 });
 
@@ -43,6 +50,7 @@ export const {
   getAllProductsStarted,
   getAllProductsSucceeded,
   getAllProductsFailed,
+  updateSearchQuery,
 } = productsSlice.actions;
 
 export default productsSlice.reducer;

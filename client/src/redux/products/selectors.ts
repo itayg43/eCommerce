@@ -1,3 +1,5 @@
+import {createSelector} from '@reduxjs/toolkit';
+
 import {RootState} from '../store';
 
 export const selectIsLoading = (state: RootState) =>
@@ -10,3 +12,16 @@ export const selectErrorMessage = (state: RootState) =>
 
 export const selectProducts = (state: RootState) =>
   state.productsState.products;
+
+export const selectSearchQuery = (state: RootState) =>
+  state.productsState.searchQuery;
+
+export const selectFilteredProducts = createSelector(
+  selectProducts,
+  selectSearchQuery,
+  (products, searchQuery) => {
+    return products.filter(product =>
+      product.name.toLowerCase().includes(searchQuery.toLowerCase()),
+    );
+  },
+);
