@@ -1,8 +1,9 @@
 import React from 'react';
-import {Pressable} from 'react-native';
+import {Pressable, StyleProp, ViewStyle} from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 interface Props {
+  style?: StyleProp<ViewStyle>;
   name: string;
   size: number;
   color: string;
@@ -10,9 +11,9 @@ interface Props {
   disabled?: boolean;
 }
 
-const IconButton = ({name, size, color, onPress, disabled}: Props) => {
+const IconButton = ({style, name, size, color, onPress, disabled}: Props) => {
   return (
-    <Pressable onPress={onPress} disabled={disabled}>
+    <Pressable style={style} onPress={onPress} disabled={disabled}>
       <MaterialCommunityIcons name={name} size={size} color={color} />
     </Pressable>
   );

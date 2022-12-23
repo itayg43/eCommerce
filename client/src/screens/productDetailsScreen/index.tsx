@@ -64,9 +64,13 @@ const ProductDetailsScreen = () => {
           </View>
 
           {/** close btn */}
-          <Pressable style={styles.closeBtnContainer} onPress={handleClose}>
-            <MaterialCommunityIcons name="close" size={24} color="white" />
-          </Pressable>
+          <IconButton
+            style={styles.closeBtnContainer}
+            name="close"
+            size={24}
+            color="white"
+            onPress={handleClose}
+          />
 
           {/** details */}
           <View style={styles.detailsContainer}>
