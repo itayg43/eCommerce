@@ -10,10 +10,14 @@ import {useAppDispatch, useAppSelector} from '../../hooks';
 import {selectProduct} from '../../redux/product/selectors';
 import {addItemToCart} from '../../redux/cart/actions/addItemToCart';
 import {getProductById} from '../../redux/product/actions/getProductById';
-import {IconButton, AddToCartButton} from '../../components';
+import {
+  IconButton,
+  AddToCartButton,
+  ChangeQuantityPanel,
+} from '../../components';
 import styles from './productDetailsScreenStyles';
 
-enum CHANGE_QUANTITY_ACTION {
+export enum CHANGE_QUANTITY_ACTION {
   INCREMENT,
   DECREMENT,
 }
@@ -54,73 +58,48 @@ const ProductDetailsScreen = () => {
   }, [dispatch, id]);
 
   return (
-    <>
-      {product && (
-        <View style={styles.container}>
-          {/** image */}
-          <View style={styles.imageContainer}>
-            <Image style={styles.image} source={{uri: product.imageUrl}} />
-          </View>
+    <View style={styles.container}>
+      {/** image */}
+      <View style={styles.imageContainer}>
+        <Image style={styles.image} source={{uri: product?.imageUrl}} />
+      </View>
 
-          {/** close btn */}
-          <IconButton
-            style={styles.closeBtnContainer}
-            name="close"
-            size={24}
-            color="white"
-            onPress={handleClose}
-          />
+      {/** close btn */}
+      <IconButton
+        style={styles.closeBtnContainer}
+        name="close"
+        size={24}
+        color="white"
+        onPress={handleClose}
+      />
 
-          {/** details */}
-          <View style={styles.detailsContainer}>
-            {/** name */}
-            <Text style={styles.name}>{product.name}</Text>
+      {/** details */}
+      <View style={styles.detailsContainer}>
+        {/** name */}
+        <Text style={styles.name}>{product?.name}</Text>
 
-            {/** price */}
-            <Text style={styles.price}>${product.price}</Text>
+        {/** price */}
+        <Text style={styles.price}>${product?.price}</Text>
 
-            {/** description */}
-            <Text style={styles.description}>{product.description}</Text>
-          </View>
+        {/** description */}
+        <Text style={styles.description}>{product?.description}</Text>
+      </View>
 
-          {/** add to cart */}
-          <View style={styles.addToCartContainer}>
-            {/** quantity */}
-            <View style={styles.quantityContainer}>
-              {/** minus */}
-              <IconButton
-                name="minus"
-                size={18}
-                color="white"
-                onPress={() =>
-                  handleQuantityChange(CHANGE_QUANTITY_ACTION.DECREMENT)
-                }
-                disabled={quantity === 1}
-              />
+      {/** add to cart */}
+      <View style={styles.addToCartContainer}>
+        {/** quantity */}
+        <ChangeQuantityPanel
+          quantity={quantity}
+          onChange={handleQuantityChange}
+        />
 
-              {/** quantity text */}
-              <Text style={styles.quantity}>{quantity}</Text>
-
-              {/** plus */}
-              <IconButton
-                name="plus"
-                size={18}
-                color="white"
-                onPress={() =>
-                  handleQuantityChange(CHANGE_QUANTITY_ACTION.INCREMENT)
-                }
-              />
-            </View>
-
-            {/** add to cart btn */}
-            <AddToCartButton
-              price={product.price * quantity}
-              onPress={handleAddToCart}
-            />
-          </View>
-        </View>
-      )}
-    </>
+        {/** add to cart btn */}
+        <AddToCartButton
+          price={product ? product.price * quantity : 0}
+          onPress={handleAddToCart}
+        />
+      </View>
+    </View>
   );
 };
 

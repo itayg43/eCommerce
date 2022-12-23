@@ -47,18 +47,4 @@ export default StyleSheet.create({
     alignItems: 'center',
     padding: 10,
   },
-
-  // quantity
-  quantityContainer: {
-    flex: 0.3,
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    backgroundColor: 'black',
-    padding: 10,
-    borderRadius: 4,
-    marginEnd: 5,
-  },
-  quantity: {
-    color: 'white',
-  },
 });
