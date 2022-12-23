@@ -2,9 +2,8 @@ import React, {useEffect, useState, useLayoutEffect} from 'react';
 import {useNavigation} from '@react-navigation/native';
 
 import {ProductsNavigationProp} from '../../navigation/ProductsStackNavigator';
-import {useAppDispatch} from '../../hooks';
+import {useAppDispatch, useDebounce} from '../../hooks';
 import {updateSearchQueryAction} from '../../redux/products/actions/updateSearchQueryAction';
-import useDebounce from '../../hooks/useDebounce';
 import Layout from '../../components/layout';
 import ProductList from '../../components/productList';
 
