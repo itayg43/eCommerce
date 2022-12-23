@@ -61,17 +61,4 @@ export default StyleSheet.create({
   quantity: {
     color: 'white',
   },
-
-  // add to cart btn
-  addToCartBtn: {
-    flex: 0.7,
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    backgroundColor: 'black',
-    padding: 11,
-    borderRadius: 4,
-  },
-  addToCartBtnText: {
-    color: 'white',
-  },
 });

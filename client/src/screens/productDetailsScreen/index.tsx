@@ -11,6 +11,7 @@ import {useAppDispatch, useAppSelector} from '../../hooks';
 import {selectProduct} from '../../redux/product/selectors';
 import {addItemToCart} from '../../redux/cart/actions/addItemToCart';
 import {getProductById} from '../../redux/product/actions/getProductById';
+import {IconButton, AddToCartButton} from '../../components';
 import styles from './productDetailsScreenStyles';
 
 enum CHANGE_QUANTITY_ACTION {
@@ -84,33 +85,35 @@ const ProductDetailsScreen = () => {
             {/** quantity */}
             <View style={styles.quantityContainer}>
               {/** minus */}
-              <Pressable
+              <IconButton
+                name="minus"
+                size={18}
+                color="white"
                 onPress={() =>
                   handleQuantityChange(CHANGE_QUANTITY_ACTION.DECREMENT)
                 }
-                disabled={quantity === 1}>
-                <MaterialCommunityIcons name="minus" size={18} color="white" />
-              </Pressable>
+                disabled={quantity === 1}
+              />
 
               {/** quantity text */}
               <Text style={styles.quantity}>{quantity}</Text>
 
               {/** plus */}
-              <Pressable
+              <IconButton
+                name="plus"
+                size={18}
+                color="white"
                 onPress={() =>
                   handleQuantityChange(CHANGE_QUANTITY_ACTION.INCREMENT)
-                }>
-                <MaterialCommunityIcons name="plus" size={18} color="white" />
-              </Pressable>
+                }
+              />
             </View>
 
             {/** add to cart btn */}
-            <Pressable style={styles.addToCartBtn} onPress={handleAddToCart}>
-              <Text style={styles.addToCartBtnText}>ADD TO CART</Text>
-              <Text style={styles.addToCartBtnText}>
-                ${product.price * quantity}
-              </Text>
-            </Pressable>
+            <AddToCartButton
+              price={product.price * quantity}
+              onPress={handleAddToCart}
+            />
           </View>
         </View>
       )}
