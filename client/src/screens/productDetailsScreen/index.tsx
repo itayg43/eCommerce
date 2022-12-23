@@ -1,7 +1,6 @@
 import React, {useEffect, useState, useCallback} from 'react';
-import {View, Image, Text, Pressable} from 'react-native';
+import {View, Image, Text} from 'react-native';
 import {useRoute, useNavigation} from '@react-navigation/native';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import {
   ProductDetailsRouteProp,
