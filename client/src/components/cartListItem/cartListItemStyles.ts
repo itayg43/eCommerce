@@ -21,7 +21,7 @@ export default StyleSheet.create({
     height: 60,
   },
 
-  // name, price
+  // name, price, quantity
   detailsContainer: {
     flex: 1,
     padding: 10,
@@ -37,7 +37,7 @@ export default StyleSheet.create({
   },
 
   // delete
-  deleteBtnContainer: {
+  deleteBtn: {
     width: 35,
     height: 35,
     justifyContent: 'center',

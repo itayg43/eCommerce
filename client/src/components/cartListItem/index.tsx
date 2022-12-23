@@ -14,7 +14,7 @@ interface Props {
 const CartListItem = ({item}: Props) => {
   const dispatch = useAppDispatch();
 
-  const handleDelete = useCallback(() => {
+  const handleRemove = useCallback(() => {
     dispatch(removeItemFromCart(item));
   }, [dispatch, item]);
 
@@ -25,7 +25,7 @@ const CartListItem = ({item}: Props) => {
         <Image style={styles.image} source={{uri: item.imageUrl}} />
       </View>
 
-      {/** name, price */}
+      {/** name, price, quantity */}
       <View style={styles.detailsContainer}>
         {/** name */}
         <Text style={styles.name} numberOfLines={1}>
@@ -40,7 +40,7 @@ const CartListItem = ({item}: Props) => {
       </View>
 
       {/** delete */}
-      <Pressable style={styles.deleteBtnContainer} onPress={handleDelete}>
+      <Pressable style={styles.deleteBtn} onPress={handleRemove}>
         <MaterialCommunityIcons name="trash-can" size={20} color="white" />
       </Pressable>
     </View>
