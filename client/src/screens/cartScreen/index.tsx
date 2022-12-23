@@ -4,8 +4,7 @@ import {Text, Divider} from 'react-native-paper';
 
 import {useAppSelector} from '../../hooks';
 import {selectAmountOfItems, selectTotalCost} from '../../redux/cart/selectors';
-import Layout from '../../components/layout';
-import CartList from '../../components/cartList';
+import {Layout, CartList} from '../../components';
 import styles from './cartScreenStyles';
 
 const CartScreen = () => {

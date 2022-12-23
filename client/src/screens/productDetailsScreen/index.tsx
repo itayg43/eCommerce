@@ -13,7 +13,7 @@ import {addItemToCart} from '../../redux/cart/actions/addItemToCart';
 import {getProductById} from '../../redux/product/actions/getProductById';
 import styles from './productDetailsScreenStyles';
 
-enum QUANTITY_ACTION {
+enum CHANGE_QUANTITY_ACTION {
   INCREMENT,
   DECREMENT,
 }
@@ -32,8 +32,8 @@ const ProductDetailsScreen = () => {
   }, [navigation]);
 
   const handleQuantityChange = useCallback(
-    (action: QUANTITY_ACTION) => {
-      action === QUANTITY_ACTION.INCREMENT
+    (action: CHANGE_QUANTITY_ACTION) => {
+      action === CHANGE_QUANTITY_ACTION.INCREMENT
         ? setQuantity(currentQuantity => currentQuantity + 1)
         : setQuantity(currentQuantity => currentQuantity - 1);
     },
@@ -85,7 +85,9 @@ const ProductDetailsScreen = () => {
             <View style={styles.quantityContainer}>
               {/** minus */}
               <Pressable
-                onPress={() => handleQuantityChange(QUANTITY_ACTION.DECREMENT)}
+                onPress={() =>
+                  handleQuantityChange(CHANGE_QUANTITY_ACTION.DECREMENT)
+                }
                 disabled={quantity === 1}>
                 <MaterialCommunityIcons name="minus" size={18} color="white" />
               </Pressable>
@@ -95,7 +97,9 @@ const ProductDetailsScreen = () => {
 
               {/** plus */}
               <Pressable
-                onPress={() => handleQuantityChange(QUANTITY_ACTION.INCREMENT)}>
+                onPress={() =>
+                  handleQuantityChange(CHANGE_QUANTITY_ACTION.INCREMENT)
+                }>
                 <MaterialCommunityIcons name="plus" size={18} color="white" />
               </Pressable>
             </View>

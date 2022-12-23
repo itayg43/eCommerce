@@ -4,8 +4,7 @@ import {useNavigation} from '@react-navigation/native';
 import {ProductsNavigationProp} from '../../navigation/ProductsStackNavigator';
 import {useAppDispatch, useDebounce} from '../../hooks';
 import {updateSearchQueryAction} from '../../redux/products/actions/updateSearchQueryAction';
-import Layout from '../../components/layout';
-import ProductList from '../../components/productList';
+import {Layout, ProductList} from '../../components';
 
 const ProductsScreen = () => {
   const dispatch = useAppDispatch();

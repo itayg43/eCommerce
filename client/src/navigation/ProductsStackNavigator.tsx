@@ -8,6 +8,7 @@ import ProductsScreen from '../screens/productsScreen';
 import ProductDetailsScreen from '../screens/productDetailsScreen';
 
 // products
+// navigation prop
 export type ProductsNavigationProp = NativeStackNavigationProp<
   ProductsStackParamList,
   'products'

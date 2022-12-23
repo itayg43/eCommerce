@@ -10,6 +10,7 @@ import {getProductByIdQuery} from '../../../queries';
 export const getProductById =
   (id: string) => async (dispatch: AppDispatch, getState: any) => {
     const currentProduct = getState().productState.product;
+
     const isSameId = currentProduct?._id === id;
     if (isSameId) {
       return;
