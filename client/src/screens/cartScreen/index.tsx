@@ -14,8 +14,6 @@ const CartScreen = () => {
 
   return (
     <Layout>
-      <Text variant="headlineLarge">My Cart</Text>
-
       {/** cart list */}
       <View style={styles.cartListContainer}>
         <CartList />

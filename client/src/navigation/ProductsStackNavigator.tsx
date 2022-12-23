@@ -10,7 +10,7 @@ import ProductDetailsScreen from '../screens/productDetailsScreen';
 // products
 export type ProductsNavigationProp = NativeStackNavigationProp<
   ProductsStackParamList,
-  'Products'
+  'products'
 >;
 
 // product details
@@ -22,18 +22,18 @@ interface ProductDetailsScreenProps {
 // navigation prop
 export type ProductDetailsNavigationProp = NativeStackNavigationProp<
   ProductsStackParamList,
-  'Product_Details'
+  'productDetails'
 >;
 
 // route prop
 export type ProductDetailsRouteProp = RouteProp<
   ProductsStackParamList,
-  'Product_Details'
+  'productDetails'
 >;
 
 export type ProductsStackParamList = {
-  Products: undefined;
-  Product_Details: ProductDetailsScreenProps | undefined;
+  products: undefined;
+  productDetails: ProductDetailsScreenProps | undefined;
 };
 
 const Stack = createNativeStackNavigator<ProductsStackParamList>();
@@ -43,9 +43,10 @@ const ProductsStackNavigator = () => {
     <Stack.Navigator>
       {/** products */}
       <Stack.Screen
-        name="Products"
+        name="products"
         component={ProductsScreen}
         options={{
+          headerTitle: 'Our Products',
           headerTransparent: true,
           headerBlurEffect: 'systemUltraThinMaterial',
         }}
@@ -53,7 +54,7 @@ const ProductsStackNavigator = () => {
 
       {/** product details */}
       <Stack.Screen
-        name="Product_Details"
+        name="productDetails"
         component={ProductDetailsScreen}
         options={{
           headerShown: false,

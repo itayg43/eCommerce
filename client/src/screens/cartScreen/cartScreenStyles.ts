@@ -4,7 +4,6 @@ export default StyleSheet.create({
   // cart list
   cartListContainer: {
     flex: 0.9,
-    marginTop: 10,
   },
 
   // summary

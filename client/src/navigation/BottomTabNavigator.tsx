@@ -5,7 +5,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import {useAppSelector} from '../hooks';
 import {selectAmountOfItems} from '../redux/cart/selectors';
 import ProductsStackNavigator from './ProductsStackNavigator';
-import CartScreen from '../screens/cartScreen';
+import CartStackNavigator from './CartStackNavigator';
 
 const Tab = createBottomTabNavigator();
 
@@ -20,7 +20,7 @@ const BottomTabNavigator = () => {
       }}>
       {/** products */}
       <Tab.Screen
-        name="Products_Stack"
+        name="productsStack"
         component={ProductsStackNavigator}
         options={{
           tabBarIcon: ({color, size}) => (
@@ -31,8 +31,8 @@ const BottomTabNavigator = () => {
 
       {/** cart */}
       <Tab.Screen
-        name="Cart"
-        component={CartScreen}
+        name="cartStack"
+        component={CartStackNavigator}
         options={{
           tabBarIcon: ({color, size}) => (
             <MaterialCommunityIcons name="cart" color={color} size={size} />

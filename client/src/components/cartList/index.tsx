@@ -13,6 +13,7 @@ const CartList = () => {
       data={items}
       renderItem={({item}) => <CartListItem item={item} />}
       keyExtractor={item => item._id}
+      contentInsetAdjustmentBehavior="automatic"
     />
   );
 };
