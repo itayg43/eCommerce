@@ -7,10 +7,14 @@ export default StyleSheet.create({
     overflow: 'hidden',
     marginBottom: 5,
   },
+
+  // image
   image: {
     width: '100%',
     height: 200,
   },
+
+  // details
   detailsContainer: {
     padding: 10,
   },
