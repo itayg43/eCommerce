@@ -4,7 +4,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 
 import {useAppDispatch} from '../../hooks';
 import {removeItemFromCart} from '../../redux/cart/actions/removeItemFromCart';
-import {CartItem} from '../../interfaces';
+import {CartItem} from '../../utils/interfaces';
 import styles from './cartListItemStyles';
 
 interface Props {

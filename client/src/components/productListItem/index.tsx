@@ -2,7 +2,7 @@ import React, {useCallback} from 'react';
 import {View, Text, Image, Pressable} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
-import {Product} from '../../interfaces';
+import {Product} from '../../utils/interfaces';
 import {ProductDetailsNavigationProp} from '../../navigation/ProductsStackNavigator';
 import styles from './productListItemStyles';
 

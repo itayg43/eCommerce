@@ -1,6 +1,6 @@
 import {addItem} from '../slice';
 import {AppDispatch} from '../../store';
-import {CartItem, Product} from '../../../interfaces';
+import {Product, CartItem} from '../../../utils/interfaces';
 
 export const addItemToCart =
   (product: Product, quantity: number) =>

@@ -1,7 +1,7 @@
 import {createSlice} from '@reduxjs/toolkit';
 import type {PayloadAction} from '@reduxjs/toolkit';
 
-import {CartItem} from '../../interfaces';
+import {CartItem} from '../../utils/interfaces';
 
 interface CartState {
   amountOfItems: number;

@@ -1,7 +1,7 @@
 import {createSlice} from '@reduxjs/toolkit';
 import type {PayloadAction} from '@reduxjs/toolkit';
 
-import {Product} from '../../interfaces';
+import {Product} from '../../utils/interfaces';
 
 interface ProductsState {
   isLoading: boolean;
