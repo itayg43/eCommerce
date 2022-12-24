@@ -2,18 +2,17 @@ import {createSlice} from '@reduxjs/toolkit';
 import type {PayloadAction} from '@reduxjs/toolkit';
 
 import {Product} from '../../utils/interfaces';
+import {STATUS} from '../../utils/enums';
 
 interface ProductsState {
-  isLoading: boolean;
-  isError: boolean;
+  status: STATUS;
   errorMessage: string | null;
   products: [Product] | [];
   searchQuery: string;
 }
 
 const initialState: ProductsState = {
-  isLoading: false,
-  isError: false,
+  status: STATUS.IDLE,
   errorMessage: null,
   products: [],
   searchQuery: '',
@@ -25,17 +24,15 @@ export const productsSlice = createSlice({
   reducers: {
     // get all products
     getAllProductsStarted: state => {
-      state.isLoading = true;
-      state.isError = false;
+      state.status = STATUS.LOADING;
       state.errorMessage = null;
     },
     getAllProductsSucceeded: (state, action: PayloadAction<[Product]>) => {
-      state.isLoading = false;
+      state.status = STATUS.IDLE;
       state.products = action.payload;
     },
     getAllProductsFailed: (state, action: PayloadAction<string>) => {
-      state.isLoading = false;
-      state.isError = true;
+      state.status = STATUS.ERROR;
       state.errorMessage = action.payload;
     },
 

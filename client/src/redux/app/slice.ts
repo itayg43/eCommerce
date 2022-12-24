@@ -1,13 +1,13 @@
 import {createSlice} from '@reduxjs/toolkit';
 
+import {STATUS} from '../../utils/enums';
+
 export interface AppState {
-  isLoading: boolean;
-  isReady: boolean;
+  status: STATUS;
 }
 
 const initialState: AppState = {
-  isLoading: false,
-  isReady: false,
+  status: STATUS.IDLE,
 };
 
 export const appSlice = createSlice({
@@ -16,11 +16,10 @@ export const appSlice = createSlice({
   reducers: {
     // get app data
     getAppDataStarted: state => {
-      state.isLoading = true;
+      state.status = STATUS.LOADING;
     },
     getAppDataFinished: state => {
-      state.isLoading = false;
-      state.isReady = true;
+      state.status = STATUS.READY;
     },
   },
 });

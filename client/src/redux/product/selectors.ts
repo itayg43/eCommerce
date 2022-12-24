@@ -1,9 +1,6 @@
 import {RootState} from '../store';
 
-export const selectIsLoading = (state: RootState) =>
-  state.productState.isLoading;
-
-export const selectIsError = (state: RootState) => state.productState.isError;
+export const selectStatus = (state: RootState) => state.productState.status;
 
 export const selectErrorMessage = (state: RootState) =>
   state.productState.errorMessage;

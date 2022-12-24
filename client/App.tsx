@@ -2,19 +2,20 @@ import React, {useEffect} from 'react';
 
 import {useAppDispatch, useAppSelector} from './src/hooks';
 import {getAppData} from './src/redux/app/actions/getAppData';
-import {selectIsReady} from './src/redux/app/selectors';
+import {selectStatus} from './src/redux/app/selectors';
+import {STATUS} from './src/utils/enums';
 import BottomTabNavigator from './src/navigation/BottomTabNavigator';
 
 const App = () => {
   const dispatch = useAppDispatch();
 
-  const isReady = useAppSelector(selectIsReady);
+  const status = useAppSelector(selectStatus);
 
   useEffect(() => {
     dispatch(getAppData());
   }, [dispatch]);
 
-  return <>{isReady && <BottomTabNavigator />}</>;
+  return <>{status === STATUS.READY && <BottomTabNavigator />}</>;
 };
 
 export default App;
