@@ -12,8 +12,8 @@ const CartStackNavigator = () => {
         component={CartScreen}
         options={{
           headerTitle: 'My Cart',
+          headerLargeTitle: true,
           headerTransparent: true,
-          headerBlurEffect: 'systemUltraThinMaterial',
         }}
       />
     </Stack.Navigator>
