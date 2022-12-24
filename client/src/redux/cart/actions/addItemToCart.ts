@@ -20,6 +20,7 @@ export const addItemToCart =
       name: product.name,
       price: product.price,
       quantity,
+      totalCost: product.price * quantity,
       imageUrl: product.imageUrl,
     };
     dispatch(addItem(item));

@@ -7,7 +7,7 @@ import {STATUS} from '../../utils/enums';
 interface ProductsState {
   status: STATUS;
   errorMessage: string | null;
-  products: [Product] | [];
+  products: Product[] | [];
   searchQuery: string;
 }
 
@@ -27,7 +27,7 @@ export const productsSlice = createSlice({
       state.status = STATUS.LOADING;
       state.errorMessage = null;
     },
-    getAllProductsSucceeded: (state, action: PayloadAction<[Product]>) => {
+    getAllProductsSucceeded: (state, action: PayloadAction<Product[]>) => {
       state.status = STATUS.IDLE;
       state.products = action.payload;
     },
