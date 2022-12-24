@@ -17,11 +17,11 @@ export default StyleSheet.create({
   },
 
   // amount of items
-  amountOfItemsContainer: {
+  itemsCountContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
-  amount: {
+  count: {
     fontWeight: 'bold',
   },
 
@@ -31,11 +31,11 @@ export default StyleSheet.create({
   },
 
   // total cost
-  totalCostContainer: {
+  itemsCostContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
-  totalCost: {
+  cost: {
     fontWeight: 'bold',
   },
 });

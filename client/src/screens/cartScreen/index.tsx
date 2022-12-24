@@ -22,9 +22,9 @@ const CartScreen = () => {
       {itemsCount > 0 && (
         <>
           <View style={styles.summaryContainer}>
-            {/** amount */}
-            <View style={styles.amountOfItemsContainer}>
-              <Text style={styles.amount}>Amount of items:</Text>
+            {/** count */}
+            <View style={styles.itemsCountContainer}>
+              <Text style={styles.count}>Amount of items:</Text>
               <Text>{itemsCount}</Text>
             </View>
 
@@ -32,8 +32,8 @@ const CartScreen = () => {
             <Divider style={styles.divider} />
 
             {/** cost */}
-            <View style={styles.totalCostContainer}>
-              <Text style={styles.totalCost}>Total cost:</Text>
+            <View style={styles.itemsCostContainer}>
+              <Text style={styles.cost}>Total cost:</Text>
               <Text>${itemsCost}</Text>
             </View>
           </View>
