@@ -48,6 +48,7 @@ const ProductsStackNavigator = () => {
         component={ProductsScreen}
         options={{
           headerTitle: 'Our Products',
+          headerLargeTitle: true,
           headerTransparent: true,
           headerBlurEffect: 'systemUltraThinMaterial',
         }}
