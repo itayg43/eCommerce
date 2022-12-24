@@ -4,7 +4,7 @@ export default StyleSheet.create({
   quantityContainer: {
     flex: 0.3,
     flexDirection: 'row',
-    justifyContent: 'space-around',
+    justifyContent: 'space-between',
     backgroundColor: 'black',
     padding: 10,
     borderRadius: 4,
