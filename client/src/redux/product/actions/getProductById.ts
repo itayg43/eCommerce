@@ -11,8 +11,8 @@ export const getProductById =
   (id: string) => async (dispatch: AppDispatch, getState: any) => {
     const currentProduct = getState().productState.product;
 
-    const isSameId = currentProduct?._id === id;
-    if (isSameId) {
+    // if same id
+    if (currentProduct?._id === id) {
       return;
     }
 
