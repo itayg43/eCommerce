@@ -7,6 +7,8 @@ export {default as ProductListItem} from './productListItem';
 // cart
 export {default as CartList} from './cartList';
 export {default as CartListItem} from './cartListItem';
+export {default as CartListSummary} from './cartListSummary';
+export {default as CartListPlaceholder} from './cartListPlaceholder';
 
 // add to cart button
 export {default as AddToCartButton} from './addToCartButton';

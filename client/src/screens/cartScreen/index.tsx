@@ -1,42 +1,24 @@
 import React from 'react';
-import {View} from 'react-native';
-import {Text, Divider} from 'react-native-paper';
 
 import {useAppSelector} from '../../hooks';
-import {selectItemsCount, selectItemsCost} from '../../redux/cart/selectors';
-import {Layout, CartList} from '../../components';
-import styles from './cartScreenStyles';
+import {selectItemsCount} from '../../redux/cart/selectors';
+import {
+  Layout,
+  CartList,
+  CartListSummary,
+  CartListPlaceholder,
+} from '../../components';
 
 const CartScreen = () => {
   const itemsCount = useAppSelector(selectItemsCount);
-  const itemsCost = useAppSelector(selectItemsCost);
 
   return (
     <Layout>
-      {/** cart list */}
-      <View style={styles.cartListContainer}>
-        <CartList />
-      </View>
-
-      {/** summary */}
+      {itemsCount === 0 && <CartListPlaceholder />}
       {itemsCount > 0 && (
         <>
-          <View style={styles.summaryContainer}>
-            {/** count */}
-            <View style={styles.itemsCountContainer}>
-              <Text style={styles.count}>Amount of items:</Text>
-              <Text>{itemsCount}</Text>
-            </View>
-
-            {/** divider */}
-            <Divider style={styles.divider} />
-
-            {/** cost */}
-            <View style={styles.itemsCostContainer}>
-              <Text style={styles.cost}>Total cost:</Text>
-              <Text>${itemsCost}</Text>
-            </View>
-          </View>
+          <CartList />
+          <CartListSummary />
         </>
       )}
     </Layout>

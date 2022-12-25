@@ -1,14 +1,8 @@
 import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
-  // cart list
-  cartListContainer: {
-    flex: 0.9,
-  },
-
-  // summary
-  summaryContainer: {
-    flex: 0.1,
+  container: {
+    padding: 10,
     paddingHorizontal: 20,
     justifyContent: 'center',
     backgroundColor: 'white',
@@ -16,8 +10,8 @@ export default StyleSheet.create({
     marginBottom: 5,
   },
 
-  // amount of items
-  itemsCountContainer: {
+  // count
+  countContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
@@ -30,8 +24,8 @@ export default StyleSheet.create({
     marginVertical: 5,
   },
 
-  // total cost
-  itemsCostContainer: {
+  // cost
+  costContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
