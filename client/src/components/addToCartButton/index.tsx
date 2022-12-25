@@ -10,9 +10,9 @@ interface Props {
 
 const AddToCartButton = ({price, onPress}: Props) => {
   return (
-    <Pressable style={styles.addToCartBtn} onPress={onPress}>
-      <Text style={styles.addToCartBtnText}>ADD TO CART</Text>
-      <Text style={styles.addToCartBtnText}>${price}</Text>
+    <Pressable style={styles.button} onPress={onPress}>
+      <Text style={styles.buttonText}>ADD TO CART</Text>
+      <Text style={styles.buttonText}>${price}</Text>
     </Pressable>
   );
 };

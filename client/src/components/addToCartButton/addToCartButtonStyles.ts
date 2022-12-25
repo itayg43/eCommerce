@@ -1,7 +1,7 @@
 import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
-  addToCartBtn: {
+  button: {
     flex: 0.7,
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -9,7 +9,7 @@ export default StyleSheet.create({
     padding: 11,
     borderRadius: 4,
   },
-  addToCartBtnText: {
+  buttonText: {
     color: 'white',
   },
 });
