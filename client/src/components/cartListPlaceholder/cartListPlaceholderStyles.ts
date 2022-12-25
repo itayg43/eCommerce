@@ -6,6 +6,7 @@ export default StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+
   navigateButton: {
     borderRadius: 4,
     backgroundColor: 'black',
