@@ -7,11 +7,11 @@ export const addItemToCart =
   async (dispatch: AppDispatch, getState: any) => {
     const currentItems = getState().cartState.items;
 
-    // check if exist
-    const itemIndex = currentItems.findIndex(
+    // check if already exist
+    const isExist = currentItems.some(
       (item: CartItem) => item._id === product._id,
     );
-    if (itemIndex !== -1) {
+    if (isExist) {
       return;
     }
 
