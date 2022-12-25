@@ -1,10 +1,10 @@
 import React, {useCallback} from 'react';
-import {View, Image, Text, Pressable} from 'react-native';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import {View, Image, Text} from 'react-native';
 
 import {useAppDispatch} from '../../hooks';
 import {removeItemFromCart} from '../../redux/cart/actions/removeItemFromCart';
 import {CartItem} from '../../utils/interfaces';
+import IconButton from '../iconButton';
 import styles from './cartListItemStyles';
 
 interface Props {
@@ -39,10 +39,14 @@ const CartListItem = ({item}: Props) => {
         <Text style={styles.quantity}>Quantity: {item.quantity}</Text>
       </View>
 
-      {/** delete */}
-      <Pressable style={styles.deleteBtn} onPress={handleRemove}>
-        <MaterialCommunityIcons name="trash-can" size={20} color="white" />
-      </Pressable>
+      {/** remove */}
+      <IconButton
+        style={styles.removeButton}
+        name="trash-can"
+        size={20}
+        color="white"
+        onPress={handleRemove}
+      />
     </View>
   );
 };

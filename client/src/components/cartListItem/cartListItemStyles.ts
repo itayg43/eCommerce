@@ -36,8 +36,8 @@ export default StyleSheet.create({
     marginTop: 3,
   },
 
-  // delete
-  deleteBtn: {
+  // remove
+  removeButton: {
     width: 35,
     height: 35,
     justifyContent: 'center',
