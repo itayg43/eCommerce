@@ -2,6 +2,10 @@
 
 ## Overview
 
+Mobile app built using React Native (Native CLI), React Navigation, Redux, and Sanity CMS.
+The app allows users to scroll and search for products from an e-commerce store.
+When tapping on the product card the user will be navigated to a product-specific page to read more information, select the quantity and add to his cart. On the cart page, the user can view his list of selected items with the option to remove, a little summary with the total items, and the total cost of the cart.
+
 ## Demo
 
-![Simulator Screen Recording - iPhone 13 - 2022-12-25 at 02 49 15](https://user-images.githubusercontent.com/93944494/209454196-210de4b3-af0c-45be-8ea3-efba0c5b80cd.gif)
+https://user-images.githubusercontent.com/93944494/209454331-b251025d-b78f-429b-9160-1f0f7201e305.mov
