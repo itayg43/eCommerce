@@ -13,14 +13,10 @@ import {getProductById} from '../../redux/product/actions/getProductById';
 import {
   IconButton,
   AddToCartButton,
-  ChangeQuantityPanel,
+  QuantitySelectionButton,
 } from '../../components';
+import {CHANGE_QUANTITY_ACTION} from '../../utils/enums';
 import styles from './productDetailsScreenStyles';
-
-export enum CHANGE_QUANTITY_ACTION {
-  INCREMENT,
-  DECREMENT,
-}
 
 const ProductDetailsScreen = () => {
   const dispatch = useAppDispatch();
@@ -88,7 +84,7 @@ const ProductDetailsScreen = () => {
       {/** add to cart */}
       <View style={styles.addToCartContainer}>
         {/** quantity */}
-        <ChangeQuantityPanel
+        <QuantitySelectionButton
           quantity={quantity}
           onChange={handleQuantityChange}
         />

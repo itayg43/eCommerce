@@ -4,3 +4,8 @@ export enum STATUS {
   ERROR,
   READY,
 }
+
+export enum CHANGE_QUANTITY_ACTION {
+  INCREMENT,
+  DECREMENT,
+}

@@ -1,18 +1,18 @@
 import React from 'react';
 import {View, Text} from 'react-native';
 
-import {CHANGE_QUANTITY_ACTION} from '../../screens/productDetailsScreen';
+import {CHANGE_QUANTITY_ACTION} from '../../utils/enums';
 import IconButton from '../iconButton';
-import styles from './changeQuantityPanelStyles';
+import styles from './quantitySelectionButtonStyles';
 
 interface Props {
   quantity: number;
   onChange: (action: CHANGE_QUANTITY_ACTION) => void;
 }
 
-const ChangeQuantityPanel = ({quantity, onChange}: Props) => {
+const QuantitySelectionButton = ({quantity, onChange}: Props) => {
   return (
-    <View style={styles.quantityContainer}>
+    <View style={styles.container}>
       {/** minus */}
       <IconButton
         name="minus"
@@ -22,7 +22,7 @@ const ChangeQuantityPanel = ({quantity, onChange}: Props) => {
         disabled={quantity === 1}
       />
 
-      {/** quantity text */}
+      {/** quantity */}
       <Text style={styles.quantity}>{quantity}</Text>
 
       {/** plus */}
@@ -36,4 +36,4 @@ const ChangeQuantityPanel = ({quantity, onChange}: Props) => {
   );
 };
 
-export default ChangeQuantityPanel;
+export default QuantitySelectionButton;

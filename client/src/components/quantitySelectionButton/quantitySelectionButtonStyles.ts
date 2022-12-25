@@ -1,7 +1,7 @@
 import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
-  quantityContainer: {
+  container: {
     flex: 0.3,
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -10,6 +10,7 @@ export default StyleSheet.create({
     borderRadius: 4,
     marginEnd: 5,
   },
+
   quantity: {
     color: 'white',
   },

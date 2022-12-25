@@ -16,5 +16,5 @@ export {default as AddToCartButton} from './addToCartButton';
 // icon button
 export {default as IconButton} from './iconButton';
 
-// change quantity panel
-export {default as ChangeQuantityPanel} from './changeQuantityPanel';
+// quantity selection button
+export {default as QuantitySelectionButton} from './quantitySelectionButton';
