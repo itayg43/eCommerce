@@ -5,7 +5,7 @@ import {
 } from '../slice';
 import {AppDispatch} from '../../store';
 import {sanityClient} from '../../../clients';
-import {getAllProductsQuery} from '../../../queries';
+import {getAllProductsQuery} from '../../../utils/queries';
 
 export const getAllProducts = () => async (dispatch: AppDispatch) => {
   try {
