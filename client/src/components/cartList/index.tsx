@@ -12,7 +12,7 @@ const CartList = () => {
     <FlatList
       data={items}
       renderItem={({item}) => <CartListItem item={item} />}
-      keyExtractor={item => item._id}
+      keyExtractor={item => item.id}
       contentInsetAdjustmentBehavior="automatic"
     />
   );

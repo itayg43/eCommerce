@@ -3,7 +3,7 @@ import {View, Image, Text} from 'react-native';
 
 import {useAppDispatch} from '../../hooks';
 import {removeItemFromCart} from '../../redux/cart/actions/removeItemFromCart';
-import {CartItem} from '../../utils/interfaces';
+import {CartItem} from '../../utils/entities';
 import IconButton from '../iconButton';
 import styles from './cartListItemStyles';
 
@@ -22,21 +22,21 @@ const CartListItem = ({item}: Props) => {
     <View style={styles.container}>
       {/** image */}
       <View style={styles.imageContainer}>
-        <Image style={styles.image} source={{uri: item.imageUrl}} />
+        <Image style={styles.image} source={{uri: item.pImageUrl}} />
       </View>
 
       {/** name, price, quantity */}
       <View style={styles.detailsContainer}>
         {/** name */}
         <Text style={styles.name} numberOfLines={1}>
-          {item.name}
+          {item.pName}
         </Text>
 
         {/** price */}
-        <Text style={styles.price}>${item.price}</Text>
+        <Text style={styles.price}>${item.pPrice}</Text>
 
         {/** quantity */}
-        <Text style={styles.quantity}>Quantity: {item.quantity}</Text>
+        <Text style={styles.quantity}>Quantity: {item.pQuantity}</Text>
       </View>
 
       {/** remove */}

@@ -3,6 +3,7 @@ import {name as appName} from './app.json';
 import {NavigationContainer} from '@react-navigation/native';
 import {Provider as StoreProvider} from 'react-redux';
 import {Provider as PaperProvider} from 'react-native-paper';
+import 'react-native-get-random-values';
 
 import {store} from './src/redux/store';
 import App from './App';

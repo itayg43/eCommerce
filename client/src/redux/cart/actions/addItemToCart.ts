@@ -1,6 +1,7 @@
 import {addItem} from '../slice';
 import {AppDispatch} from '../../store';
-import {Product, CartItem} from '../../../utils/interfaces';
+import {Product} from '../../../utils/interfaces';
+import {CartItem} from '../../../utils/entities';
 
 export const addItemToCart =
   (product: Product, quantity: number) =>
@@ -9,19 +10,12 @@ export const addItemToCart =
 
     // check if already exist
     const isExist = currentItems.some(
-      (item: CartItem) => item._id === product.id,
+      (item: CartItem) => item.pId === product.id,
     );
     if (isExist) {
       return;
     }
 
-    const item: CartItem = {
-      _id: product.id,
-      name: product.name,
-      price: product.price,
-      quantity,
-      totalCost: product.price * quantity,
-      imageUrl: product.imageUrl,
-    };
+    const item = new CartItem(product, quantity);
     dispatch(addItem(item));
   };

@@ -1,7 +1,7 @@
 import {createSlice} from '@reduxjs/toolkit';
 import type {PayloadAction} from '@reduxjs/toolkit';
 
-import {CartItem} from '../../utils/interfaces';
+import {CartItem} from '../../utils/entities';
 
 interface CartState {
   items: CartItem[] | [];
@@ -24,15 +24,15 @@ export const cartSlice = createSlice({
       const item = action.payload;
       state.items = [...state.items, item];
       state.itemsCount += 1;
-      state.itemsCost += item.totalCost;
+      state.itemsCost += item.getTotalPrice();
     },
 
     // remove item
     removeItem: (state, action: PayloadAction<CartItem>) => {
       const item = action.payload;
-      state.items = state.items.filter(i => i._id !== item._id);
+      state.items = state.items.filter(i => i.pId !== item.pId);
       state.itemsCount -= 1;
-      state.itemsCost -= item.totalCost;
+      state.itemsCost -= item.getTotalPrice();
     },
   },
 });
