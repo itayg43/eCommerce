@@ -9,14 +9,14 @@ export const addItemToCart =
 
     // check if already exist
     const isExist = currentItems.some(
-      (item: CartItem) => item._id === product._id,
+      (item: CartItem) => item._id === product.id,
     );
     if (isExist) {
       return;
     }
 
     const item: CartItem = {
-      _id: product._id,
+      _id: product.id,
       name: product.name,
       price: product.price,
       quantity,

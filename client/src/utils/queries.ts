@@ -2,7 +2,7 @@ import groq from 'groq';
 
 export const getAllProductsQuery = groq`
 *[_type == "product"]{
-    _id,
+    "id": _id,
     name,
     description,
     category,
@@ -13,7 +13,7 @@ export const getAllProductsQuery = groq`
 
 export const getProductByIdQuery = groq`
 *[_type == "product" && _id == $id][0]{
-    _id,
+    "id": _id,
     name,
     description,
     category,
